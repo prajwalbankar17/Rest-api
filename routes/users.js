@@ -1,19 +1,28 @@
-import express from 'express';
+import express from "express";
 
 const router = express.Router();
 
-router.get('/',(req,res) =>{
-    res.send('Hello');
-})
+const users = [
+  {
+    firstName: "John",
+    lastName: "Doe",
+    age: 25,
+  },
+  {
+    firstName: "Jane",
+    lastName: "Doe",
+    age: 24,
+  }
+];
+
+router.get("/", (req, res) => {
+  res.send(users);
+});
+
+router.post("/", (req, res) => {
+    console.log('POST ROUTE REACHED');
+    res.send('POST ROUTE REACHED');
+});
 
 export default router;
-
-
-
-
-
-
-
-
-
 
